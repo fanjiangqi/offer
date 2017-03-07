@@ -47,7 +47,7 @@ class MyTest extends Thread
             }
             // 输出同一个账户的账户名和循环变量
             System.out.println(account.getName()
-                    + "账户的i值：" + i);
+                    + " i values:" + i);
         }
     }
 }
@@ -64,7 +64,7 @@ public class ThreadLocalTest
 		都完全拥有各自的账户名副本，所以从i == 6之后，将看到两条
 		线程访问同一个账户时看到不同的账户名。
 		*/
-        new MyTest(at , "线程甲").start();
-        new MyTest(at , "线程乙").start ();
+        new MyTest(at , "Thread A").start();
+        new MyTest(at , "Thread B").start ();
     }
 }

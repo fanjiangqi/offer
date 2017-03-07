@@ -14,6 +14,7 @@ class SleepBlocked implements Runnable {
         try {
             TimeUnit.SECONDS.sleep(100);
         } catch(InterruptedException e) {
+            System.out.println(Thread.currentThread().isInterrupted());
             System.out.println("InterruptedException");
         }
         System.out.println("Exiting SleepBlocked.run()");
@@ -28,6 +29,7 @@ class IOBlocked implements Runnable {
             System.out.println("Waiting for read():");
             in.read();
         } catch(IOException e) {
+            //System.out.println(Thread.currentThread().isInterrupted());
             if(Thread.currentThread().isInterrupted()) {
                 System.out.println("Interrupted from blocked I/O");
             } else {

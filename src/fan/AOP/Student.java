@@ -6,4 +6,5 @@ package fan.AOP;
  */
 public interface Student {
     public void sayHello();
+    public String returnName();
 }

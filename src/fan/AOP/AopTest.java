@@ -16,6 +16,7 @@ public class AopTest {
         Student graduStuProxy = (Student)Proxy.newProxyInstance(graduStu.getClass().getClassLoader(),graduStu.getClass().getInterfaces()
         ,handler);
         graduStuProxy.sayHello();
+        System.out.println(graduStuProxy.returnName());
 
     }
 

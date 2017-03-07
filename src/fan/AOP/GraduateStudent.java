@@ -12,4 +12,9 @@ public class GraduateStudent implements Student {
     public void sayHello() {
         System.out.println("hello, everyone! My name is"+ name);
     }
+    //此方法用于测试 jdk有返回值的动态代理，待完成
+    //2017.2.10 fan
+    public String returnName() {
+        return name;
+    }
 }
