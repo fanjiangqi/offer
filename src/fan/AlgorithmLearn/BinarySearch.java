@@ -25,8 +25,8 @@ public class BinarySearch {
     }
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 7, 8};
-        int result = BinarySearch.recursiveBinarySearch(array, 6 , 0, array.length-1);
-        System.out.println(result);
+       // int result = BinarySearch.recursiveBinarySearch(array, 6 , 0, array.length-1);
+        //System.out.println(result);
         int result2 = BinarySearch.IterationBinarySearch(array, 6 , 0, array.length-1);
         System.out.println(result2);
     }

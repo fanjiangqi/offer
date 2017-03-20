@@ -27,6 +27,7 @@ public class ArrayToFour {
         return true;
     }
     static  boolean resolve1(int[] a ){
+        if (a.length < 5)return false;
         int m1 = 0;
         int m2 = 1;
         int m3 = 2;
@@ -42,7 +43,7 @@ public class ArrayToFour {
                     sumC += a[m3];
                     sumD -= a[m3 + 1];
                     ++m3;
-                    if(m3 == length )
+                    if(m3 == length-1 )
                         break;
                     else
                         continue;
@@ -51,7 +52,7 @@ public class ArrayToFour {
                     sumB += a[m2];
                     sumC -= a[m2 + 1];
                     ++m2;
-                    if(m2 == m3 )
+                    if(m2 == m3-1 )
                         break;
                     else
                         continue;
@@ -60,7 +61,7 @@ public class ArrayToFour {
                     sumA += a[m1];
                     sumB -= a[m1 + 1];
                     ++m1;
-                    if(m1 == m2 )
+                    if(m1 == m2-1 )
                         break;
                     else
                         continue;
@@ -72,14 +73,25 @@ public class ArrayToFour {
         return false;
     }
     static boolean resolve2(int[] a){
+       if (a.length < 4) return false;
         int length = a.length;
-        int sum1 = 0;
+         int sum1 = 0;
         int sum2 = 0;
         int sum3 = 0;
         int sum4 = 0;
-        for (int m1 = 1; m1 < length -1; m1++){
-            sum1 =
+        for (int m1 = 1; m1 < length - 1; m1++){
+            sum1 = sum(a, 0, m1 - 1 );
+            for (int m2 = m1 + 2; m2 < length - 1; m2++){
+                sum2 = sum(a, m1 + 1, m2 - 1);
+                for (int m3 = m2 + 2; m3 < length - 1; m3++){
+                    sum3 = sum(a, m2 + 1, m3 - 1);
+                    sum4 = sum(a, m3 + 1, length - 1);
+                    if (sum1 == sum2 && sum1 == sum3 && sum1 == sum4)
+                        return true;
+                }
+            }
         }
+        return false;
     }
     static int sum(int[] a, int lo, int hi){
         int sum = 0;
@@ -92,7 +104,12 @@ public class ArrayToFour {
     public static void main(String[] args) {
         int[] a = {2,5,1,1,1,1,4,1,7,3,7};
         int[] b = {10,2,11,13,1,1,1,1,1};
-        System.out.println(resolve1(a));
+        int[] c = {1,1,1};
+       System.out.println(resolve1(a));
         System.out.println(resolve1(b));
+        System.out.println(resolve1(c));
+       /* System.out.println(resolve2(a));
+        System.out.println(resolve2(b));
+        System.out.println(resolve2(c));*/
     }
 }
