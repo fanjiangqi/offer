@@ -15,6 +15,7 @@ public class BinarySearch {
     }
     public static int IterationBinarySearch(int[] array, int key, int lo, int hi){
         int mid;
+
         while (lo <= hi){ //这一句特别重要，等价于 递归中 lo > hi
             mid = (hi - lo) / 2 + lo;
             if(key < array[mid]) hi = mid -1;

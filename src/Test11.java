@@ -9,8 +9,9 @@ public class Test11 {
      * 2.写出指数的二进制表达，例如13表达为二进制1101。
      * 3.举例:10^1101 = 10^0001*10^0100*10^1000。
      * 4.通过&1和>>1来逐位读取1101，为1时将该位代表的乘数累乘到最终结果。
+     * 此答案拷贝于网络
      */
-    public static double Power(double base, int n)  {
+    public static double Power1(double base, int n)  {
         double res = 1,curr = base;
         int exponent;
         if(n>0){
@@ -32,6 +33,6 @@ public class Test11 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Test11.Power(0,-3));
+        System.out.println(Test11.Power1(0,-3));
     }
 }

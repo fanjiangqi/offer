@@ -32,7 +32,7 @@ public class Lis {
         if(A.length == 0)
             return 0;
         int dp[] = new int[n]; //存储第i个元素结尾的最长递增子序列的长度
-        int ends[] = new int[A.length];// ends[right]
+        int ends[] = new int[A.length];// ends[right]，长度为right+1，的递增序列最小结尾数是ends[right]
         int right = 0;
         ends[0] = A[0];
         dp[0] = 1;
